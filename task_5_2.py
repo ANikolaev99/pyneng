@@ -6,11 +6,11 @@ print('\n' + '-' * 30)
 result = '''
 Network:
 {:<15}	{:<15}	{:<15}	{:<15}
-{:<15}	{:<15}	{:<15}	{:<15}
+{:08b}	{:08b}	{:08b}	{:08b}
 Mask:
 {:<15}
 {:<15}	{:<15}	{:<15}	{:<15}
-{:<15}	{:<15}	{:<15}	{:<15}
+{:08b}	{:08b}	{:08b}	{:08b}
 '''
 
 mask = {'/32': '255.255.255.255',
@@ -28,19 +28,19 @@ print(result.format(
 			ip.split('.')[1], 
 			ip.split('.')[2], 
 			ip.split('.')[3].split('/')[0], 
-			bin(int(ip.split('.')[0])), 
-			bin(int(ip.split('.')[1])),
-			bin(int(ip.split('.')[2])),
-			bin(int(ip.split('.')[3].split('/')[0])),
+			int(ip.split('.')[0]), 
+			int(ip.split('.')[1]),
+			int(ip.split('.')[2]),
+			int(ip.split('.')[3].split('/')[0]),
 			ip.split('.')[-1][1:],
 			mask[ip.split('.')[-1][1:]].split('.')[0],
 			mask[ip.split('.')[-1][1:]].split('.')[1],
 			mask[ip.split('.')[-1][1:]].split('.')[2],
 			mask[ip.split('.')[-1][1:]].split('.')[3],
-			bin(int(mask[ip.split('.')[-1][1:]].split('.')[0])),
-			bin(int(mask[ip.split('.')[-1][1:]].split('.')[1])),
-			bin(int(mask[ip.split('.')[-1][1:]].split('.')[2])),
-			bin(int(mask[ip.split('.')[-1][1:]].split('.')[3]))))
+			int(mask[ip.split('.')[-1][1:]].split('.')[0]),
+			int(mask[ip.split('.')[-1][1:]].split('.')[1]),
+			int(mask[ip.split('.')[-1][1:]].split('.')[2]),
+			int(mask[ip.split('.')[-1][1:]].split('.')[3])))
 
 #print(result.format(bin(int(ip.split('.')[0])), ip.split('.')[1], ip.split('.')[2], ip.split('.')[3]))
 
